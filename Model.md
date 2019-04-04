@@ -21,3 +21,16 @@ $dataProvider->sort = ['defaultOrder' => ['id' => SORT_DESC]]; //排序
             )
         ]);
 ```
+
+```php
+        $dataProvider->sort = [
+            'defaultOrder' => ['id' => SORT_DESC,],
+            'attributes'=>array_merge($this->attributes(),
+            [
+                '字段' => [
+                    'asc' => ['字段.字段' => SORT_ASC],
+                    'desc' => ['字段.字段' => SORT_DESC],
+                ]
+            ])
+        ];
+```
